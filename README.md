@@ -11,6 +11,8 @@ Research and Development Centre for Mathematical Modelling, Department of Mathem
 
 **Presented at the Colombo Quantum Computing Meetup (CQCM) 2026.**
 
+**Paper:** the full text will be available soon (link and DOI to be added here).
+
 ## Abstract
 
 We give a compact end-to-end demonstration of Quantum Fourier Transform (QFT) based image compression on a
@@ -175,7 +177,7 @@ If you use this code or the results, please cite the study (see [`CITATION.cff`]
 > Image Compression: A Two-Qubit Simulation and SpinQ NMR Demonstration," Colombo Quantum Computing Meetup
 > (CQCM) 2026.
 
-Add the proceedings or journal reference and DOI to `CITATION.cff` when available.
+The paper is not yet public; its DOI will be added here and in `CITATION.cff` once available.
 
 ## Contributing
 
