@@ -1,0 +1,1288 @@
+{
+  "params": {
+    "n_law": 50000,
+    "n_mc": 20000,
+    "seed": 2026,
+    "qiskit": true
+  },
+  "summary": {
+    "PASS": 70,
+    "FLAG": 1,
+    "INFO": 4
+  },
+  "checks": [
+    {
+      "group": "1 Grayscale example",
+      "name": "QFT matrix equals F4 of Eq. (3)",
+      "source": "paper Eq. 3",
+      "expected": "[[0.5, 0.5, 0.5, 0.5], [0.5, 0, -0.5, 0], [0.5, -0.5, 0.5, -0.5], [0.5, 0, -0.5, 0]]",
+      "actual": "[[0.5, 0.5, 0.5, 0.5], [0.5, 3.06162e-17, -0.5, -9.18485e-17], [0.5, -0.5, 0.5, -0.5], [0.5, -9.18485e-17, -0.5, 2.75546e-16]]",
+      "tol": 1e-12,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "1 Grayscale example",
+      "name": "QFT matrix imaginary part",
+      "source": "paper Eq. 3",
+      "expected": "[[0, 0, 0, 0], [0, 0.5, 0, -0.5], [0, 0, 0, 0], [0, -0.5, 0, 0.5]]",
+      "actual": "[[0, 0, 0, 0], [0, 0.5, 6.12323e-17, -0.5], [0, 6.12323e-17, -1.22465e-16, 1.83697e-16], [0, -0.5, 1.83697e-16, 0.5]]",
+      "tol": 1e-12,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "1 Grayscale example",
+      "name": "F4 is unitary",
+      "source": "paper Sec. 2.1",
+      "expected": "True",
+      "actual": "True",
+      "tol": "-",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "1 Grayscale example",
+      "name": "||x||_2 = 50*sqrt(30)",
+      "source": "paper Eq. 7",
+      "expected": "273.861",
+      "actual": "273.861",
+      "tol": 1e-09,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "1 Grayscale example",
+      "name": "encoded state psi",
+      "source": "paper Eq. 9",
+      "expected": "[0.7303, 0.1826, 0.3651, 0.5477]",
+      "actual": "[0.730297, 0.182574, 0.365148, 0.547723]",
+      "tol": 5e-05,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "1 Grayscale example",
+      "name": "QFT coefficients y (real part)",
+      "source": "paper Eq. 11",
+      "expected": "[0.912871, 0.182574, 0.182574, 0.182574]",
+      "actual": "[0.912871, 0.182574, 0.182574, 0.182574]",
+      "tol": 1e-12,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "1 Grayscale example",
+      "name": "QFT coefficients y (imag part)",
+      "source": "paper Eq. 11",
+      "expected": "[0, -0.182574, 0, 0.182574]",
+      "actual": "[0, -0.182574, 6.70767e-17, 0.182574]",
+      "tol": 1e-12,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "1 Grayscale example",
+      "name": "coefficient magnitudes |y|",
+      "source": "paper Eq. 12",
+      "expected": "[0.9129, 0.2582, 0.1826, 0.2582]",
+      "actual": "[0.912871, 0.258199, 0.182574, 0.258199]",
+      "tol": 5e-05,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "1 Grayscale example",
+      "name": "energy shares before QFT",
+      "source": "deck: Results energy slide",
+      "expected": "[0.533333, 0.0333333, 0.133333, 0.3]",
+      "actual": "[0.533333, 0.0333333, 0.133333, 0.3]",
+      "tol": 1e-12,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "1 Grayscale example",
+      "name": "energy shares after QFT",
+      "source": "deck: Results energy slide",
+      "expected": "[0.833333, 0.0666667, 0.0333333, 0.0666667]",
+      "actual": "[0.833333, 0.0666667, 0.0333333, 0.0666667]",
+      "tol": 1e-12,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "1 Grayscale example",
+      "name": "selected set S = {0, 1} (tie -> smaller index)",
+      "source": "paper Sec. 4.3",
+      "expected": "True",
+      "actual": "True",
+      "tol": "-",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "1 Grayscale example",
+      "name": "retained energy (K=2)",
+      "source": "paper Eq. 15",
+      "expected": "0.9",
+      "actual": "0.9",
+      "tol": 1e-12,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "1 Grayscale example",
+      "name": "energy in y0 alone",
+      "source": "paper Sec. 5.1",
+      "expected": "0.833333",
+      "actual": "0.833333",
+      "tol": 1e-12,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "1 Grayscale example",
+      "name": "coefficient retention fraction",
+      "source": "paper Table 1",
+      "expected": "0.5",
+      "actual": "0.5",
+      "tol": 0,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "1 Grayscale example",
+      "name": "reconstructed vector x_hat",
+      "source": "paper Eq. 19",
+      "expected": "[158.114, 105.409, 105.409, 158.114]",
+      "actual": "[158.114, 105.409, 105.409, 158.114]",
+      "tol": 0.0005,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "1 Grayscale example",
+      "name": "MSE",
+      "source": "paper Eq. 26",
+      "expected": "1229.93",
+      "actual": "1229.93",
+      "tol": 0.005,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "1 Grayscale example",
+      "name": "PSNR (dB)",
+      "source": "paper Eq. 27",
+      "expected": "17.23",
+      "actual": "17.232",
+      "tol": 0.005,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "1 Grayscale example",
+      "name": "S={0,3} gives the same real reconstruction",
+      "source": "paper Sec. 3.2",
+      "expected": "[158.114, 105.409, 105.409, 158.114]",
+      "actual": "[158.114, 105.409, 105.409, 158.114]",
+      "tol": 1e-09,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "1 Grayscale example",
+      "name": "QFT -> IQFT without truncation returns the input",
+      "source": "paper Sec. 4.2",
+      "expected": "[200, 50, 100, 150]",
+      "actual": "[200, 50, 100, 150]",
+      "tol": 1e-09,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "2 Circuit",
+      "name": "manual circuit (H, CP, H, SWAP) equals F4 [NumPy]",
+      "source": "paper Sec. 4.2",
+      "expected": "[[0.5, 0.5, 0.5, 0.5], [0.5, 3.06162e-17, -0.5, -9.18485e-17], [0.5, -0.5, 0.5, -0.5], [0.5, -9.18485e-17, -0.5, 2.75546e-16]]",
+      "actual": "[[0.5, 0.5, 0.5, 0.5], [0.5, 3.06162e-17, -0.5, -3.06162e-17], [0.5, -0.5, 0.5, -0.5], [0.5, -3.06162e-17, -0.5, 3.06162e-17]]",
+      "tol": 1e-12,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "2 Circuit",
+      "name": "manual circuit imaginary part [NumPy]",
+      "source": "paper Sec. 4.2",
+      "expected": "[[0, 0, 0, 0], [0, 0.5, 6.12323e-17, -0.5], [0, 6.12323e-17, -1.22465e-16, 1.83697e-16], [0, -0.5, 1.83697e-16, 0.5]]",
+      "actual": "[[0, 0, 0, 0], [0, 0.5, 0, -0.5], [0, 0, 0, 0], [0, -0.5, 0, 0.5]]",
+      "tol": 1e-12,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "2 Circuit",
+      "name": "inverse circuit equals F4-dagger [NumPy]",
+      "source": "paper Sec. 4.2",
+      "expected": "[[0.5, 0.5, 0.5, 0.5], [0.5, 3.06162e-17, -0.5, -9.18485e-17], [0.5, -0.5, 0.5, -0.5], [0.5, -9.18485e-17, -0.5, 2.75546e-16]]",
+      "actual": "[[0.5, 0.5, 0.5, 0.5], [0.5, 3.06162e-17, -0.5, -3.06162e-17], [0.5, -0.5, 0.5, -0.5], [0.5, -3.06162e-17, -0.5, 3.06162e-17]]",
+      "tol": 1e-12,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "2 Circuit",
+      "name": "classical FFT reference equals y",
+      "source": "paper Sec. 4.1 step 5",
+      "expected": "[0.912871, 0.182574, 0.182574, 0.182574]",
+      "actual": "[0.912871, 0.182574, 0.182574, 0.182574]",
+      "tol": 1e-12,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "2 Circuit",
+      "name": "classical FFT reference (imag)",
+      "source": "paper Sec. 4.1 step 5",
+      "expected": "[0, -0.182574, 6.70767e-17, 0.182574]",
+      "actual": "[0, -0.182574, 0, 0.182574]",
+      "tol": 1e-12,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "2 Circuit",
+      "name": "manual circuit equals F4 [Qiskit Operator]",
+      "source": "paper Sec. 4.2",
+      "expected": "[[0.5, 0.5, 0.5, 0.5], [0.5, 3.06162e-17, -0.5, -9.18485e-17], [0.5, -0.5, 0.5, -0.5], [0.5, -9.18485e-17, -0.5, 2.75546e-16]]",
+      "actual": "[[0.5, 0.5, 0.5, 0.5], [0.5, 3.06162e-17, -0.5, -3.06162e-17], [0.5, -0.5, 0.5, -0.5], [0.5, -3.06162e-17, -0.5, 3.06162e-17]]",
+      "tol": 1e-09,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "2 Circuit",
+      "name": "manual circuit imaginary part [Qiskit]",
+      "source": "paper Sec. 4.2",
+      "expected": "[[0, 0, 0, 0], [0, 0.5, 6.12323e-17, -0.5], [0, 6.12323e-17, -1.22465e-16, 1.83697e-16], [0, -0.5, 1.83697e-16, 0.5]]",
+      "actual": "[[0, 0, 0, 0], [0, 0.5, 0, -0.5], [0, 0, 0, 0], [0, -0.5, 0, 0.5]]",
+      "tol": 1e-09,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "2 Circuit",
+      "name": "Qiskit built-in QFT equals F4",
+      "source": "paper Sec. 4.2",
+      "expected": "[[0.5, 0.5, 0.5, 0.5], [0.5, 3.06162e-17, -0.5, -9.18485e-17], [0.5, -0.5, 0.5, -0.5], [0.5, -9.18485e-17, -0.5, 2.75546e-16]]",
+      "actual": "[[0.5, 0.5, 0.5, 0.5], [0.5, 3.06162e-17, -0.5, -9.18485e-17], [0.5, -0.5, 0.5, -0.5], [0.5, -9.18485e-17, -0.5, 2.75546e-16]]",
+      "tol": 1e-09,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "2 Circuit",
+      "name": "Qiskit built-in QFT imaginary part",
+      "source": "paper Sec. 4.2",
+      "expected": "[[0, 0, 0, 0], [0, 0.5, 6.12323e-17, -0.5], [0, 6.12323e-17, -1.22465e-16, 1.83697e-16], [0, -0.5, 1.83697e-16, 0.5]]",
+      "actual": "[[0, 0, 0, 0], [0, 0.5, 6.12323e-17, -0.5], [0, 6.12323e-17, -1.22465e-16, 1.83697e-16], [0, -0.5, 1.83697e-16, 0.5]]",
+      "tol": 1e-09,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "2 Circuit",
+      "name": "Aer 2048-shot probabilities vs |y|^2 (max abs gap)",
+      "source": "paper Sec. 4.4",
+      "expected": "[0.833333, 0.0666667, 0.0333333, 0.0666667]",
+      "actual": "[0.842773, 0.0668945, 0.0297852, 0.0605469]",
+      "tol": 0.04,
+      "status": "PASS",
+      "note": "statistical; 4-sigma band for 2048 shots is about 0.04"
+    },
+    {
+      "group": "3 SpinQ hardware",
+      "name": "Example 1: mean absolute error",
+      "source": "paper Table 3",
+      "expected": "0.0315",
+      "actual": "0.0315",
+      "tol": 6e-05,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "3 SpinQ hardware",
+      "name": "Example 1: maximum absolute error",
+      "source": "paper Table 3",
+      "expected": "0.063",
+      "actual": "0.063",
+      "tol": 0.0006,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "3 SpinQ hardware",
+      "name": "Example 1: total variation distance",
+      "source": "paper Table 3",
+      "expected": "0.063",
+      "actual": "0.063",
+      "tol": 0.0006,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "3 SpinQ hardware",
+      "name": "Example 1: measured probabilities sum to 1",
+      "source": "paper Sec. 5.2",
+      "expected": "1",
+      "actual": "1",
+      "tol": 0.0025,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "3 SpinQ hardware",
+      "name": "Example 2: mean absolute error",
+      "source": "paper Table 3",
+      "expected": "0.025",
+      "actual": "0.025",
+      "tol": 6e-05,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "3 SpinQ hardware",
+      "name": "Example 2: maximum absolute error",
+      "source": "paper Table 3",
+      "expected": "0.025",
+      "actual": "0.025",
+      "tol": 0.0006,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "3 SpinQ hardware",
+      "name": "Example 2: total variation distance",
+      "source": "paper Table 3",
+      "expected": "0.05",
+      "actual": "0.05",
+      "tol": 0.0006,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "3 SpinQ hardware",
+      "name": "Example 2: measured probabilities sum to 1",
+      "source": "paper Sec. 5.2",
+      "expected": "1",
+      "actual": "1",
+      "tol": 0.0025,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "3 SpinQ hardware",
+      "name": "Example 3: mean absolute error",
+      "source": "paper Table 3",
+      "expected": "0.118",
+      "actual": "0.118",
+      "tol": 6e-05,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "3 SpinQ hardware",
+      "name": "Example 3: maximum absolute error",
+      "source": "paper Table 3",
+      "expected": "0.177",
+      "actual": "0.177",
+      "tol": 0.0006,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "3 SpinQ hardware",
+      "name": "Example 3: total variation distance",
+      "source": "paper Table 3",
+      "expected": "0.236",
+      "actual": "0.236",
+      "tol": 0.0006,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "3 SpinQ hardware",
+      "name": "Example 3: measured probabilities sum to 1",
+      "source": "paper Sec. 5.2",
+      "expected": "1",
+      "actual": "1",
+      "tol": 0.0025,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "3 SpinQ hardware",
+      "name": "Example 4: mean absolute error",
+      "source": "paper Table 3",
+      "expected": "0.0555",
+      "actual": "0.0555",
+      "tol": 6e-05,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "3 SpinQ hardware",
+      "name": "Example 4: maximum absolute error",
+      "source": "paper Table 3",
+      "expected": "0.056",
+      "actual": "0.056",
+      "tol": 0.0006,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "3 SpinQ hardware",
+      "name": "Example 4: total variation distance",
+      "source": "paper Table 3",
+      "expected": "0.111",
+      "actual": "0.111",
+      "tol": 0.0006,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "3 SpinQ hardware",
+      "name": "Example 4: measured probabilities sum to 1",
+      "source": "paper Sec. 5.2",
+      "expected": "1",
+      "actual": "1.002",
+      "tol": 0.0025,
+      "status": "PASS",
+      "note": "rounding of the printed values"
+    },
+    {
+      "group": "3 SpinQ hardware",
+      "name": "overall mean absolute difference (16 probabilities)",
+      "source": "paper Sec. 5.3",
+      "expected": "0.0575",
+      "actual": "0.0575",
+      "tol": 5e-05,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "3 SpinQ hardware",
+      "name": "ranking by MAE: Example 2 < 1 < 4 < 3",
+      "source": "deck: Probability errors slide",
+      "expected": "True",
+      "actual": "True",
+      "tol": "-",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "3 SpinQ hardware",
+      "name": "Example 1: printed T equals T from the stated matrix",
+      "source": "paper Table 2",
+      "expected": "[0.5, 0, 0, 0.5]",
+      "actual": "[0.5, 0, 0, 0.5]",
+      "tol": 1e-09,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "3 SpinQ hardware",
+      "name": "Example 2: printed T equals T from the stated matrix",
+      "source": "paper Table 2",
+      "expected": "[0.5, 0.5, 0, 0]",
+      "actual": "[0.5, 0.5, 0, 0]",
+      "tol": 1e-09,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "3 SpinQ hardware",
+      "name": "Example 3: printed T vs T from the stated matrix",
+      "source": "paper Table 2",
+      "expected": "[0, 0.5, 0, 0.5]",
+      "actual": "[0, 0.5, 0.5, 0]",
+      "tol": "-",
+      "status": "FLAG",
+      "note": "The stated input matrix [[0,1],[1,0]] amplitude-encodes to probability 0.5 on |01> and |10>, but the table lists 0.5 on |01> and |11>. Table 3 values follow the LISTED T. Check with the experimenters which pattern was actually run (e.g. [[0,1],[0,1]] gives |01>,|11>)."
+    },
+    {
+      "group": "3 SpinQ hardware",
+      "name": "Example 4: printed T equals T from the stated matrix",
+      "source": "paper Table 2",
+      "expected": "[0.25, 0.25, 0.25, 0.25]",
+      "actual": "[0.25, 0.25, 0.25, 0.25]",
+      "tol": 1e-09,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "4 Analysis",
+      "name": "coefficient closed forms (brightness / left-right / top-bottom)",
+      "source": "analysis",
+      "expected": "True",
+      "actual": "True",
+      "tol": "-",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "4 Analysis",
+      "name": "K=1 reconstruction is one flat value 136.9",
+      "source": "deck: Analysis K sweep",
+      "expected": "[136.9, 136.9, 136.9, 136.9]",
+      "actual": "[136.931, 136.931, 136.931, 136.931]",
+      "tol": 0.05,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "4 Analysis",
+      "name": "K=1 PSNR",
+      "source": "deck: Analysis K sweep",
+      "expected": "13",
+      "actual": "12.9889",
+      "tol": 0.05,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "4 Analysis",
+      "name": "K=2 PSNR",
+      "source": "deck: Analysis K sweep",
+      "expected": "17.2",
+      "actual": "17.232",
+      "tol": 0.05,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "4 Analysis",
+      "name": "K=3 PSNR",
+      "source": "deck: Analysis K sweep",
+      "expected": "20.1",
+      "actual": "20.1354",
+      "tol": 0.05,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "4 Analysis",
+      "name": "K=4 returns the image exactly (MSE)",
+      "source": "deck: Analysis K sweep",
+      "expected": "0",
+      "actual": "2.52435e-28",
+      "tol": 1e-09,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "4 Analysis",
+      "name": "smooth image B: PSNR at K=1",
+      "source": "deck: Analysis eight test images",
+      "expected": "33.2",
+      "actual": "33.1794",
+      "tol": 0.1,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "4 Analysis",
+      "name": "smooth image B: PSNR at K=3",
+      "source": "deck: Analysis eight test images",
+      "expected": "46.2",
+      "actual": "46.1932",
+      "tol": 0.1,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "4 Analysis",
+      "name": "gradient C stays below 16 dB at K=3",
+      "source": "deck: Analysis eight test images",
+      "expected": "True",
+      "actual": "True",
+      "tol": "-",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "4 Analysis",
+      "name": "single bright pixel E: PSNR at K=3 (about 16 dB)",
+      "source": "deck: Analysis eight test images",
+      "expected": "16",
+      "actual": "15.9653",
+      "tol": 0.1,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "4 Analysis",
+      "name": "single bright pixel E spreads energy evenly",
+      "source": "deck: Analysis eight test images",
+      "expected": "[0.25, 0.25, 0.25, 0.25]",
+      "actual": "[0.25, 0.25, 0.25, 0.25]",
+      "tol": 1e-12,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "4 Analysis",
+      "name": "images reconstructed exactly (missing bars): F all K; D,G at K=3; H at K=2,3",
+      "source": "deck: Analysis eight test images",
+      "expected": "True",
+      "actual": "True",
+      "tol": "-",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "4 Analysis",
+      "name": "exact MSE law (179531 comparisons on 50000 random images, max |pred-sim|/||x||^2 = 2.22e-16)",
+      "source": "deck: Analysis error and brightness",
+      "expected": "True",
+      "actual": "True",
+      "tol": "-",
+      "status": "PASS",
+      "note": "covered by law: {'symmetric': 150000, 'pair-split': 29531, 'uncovered': 20469}; remaining sets are K=3 with S={0,1,2}-type"
+    },
+    {
+      "group": "4 Analysis",
+      "name": "PSNR gain per halving of brightness (dB)",
+      "source": "deck: Analysis error and brightness",
+      "expected": "6.0206",
+      "actual": "[6.0206, 6.0206, 6.0206]",
+      "tol": 1e-06,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "4 Analysis",
+      "name": "relative error stays 6.6% at every brightness",
+      "source": "deck: Analysis error and brightness",
+      "expected": "[0.0656, 0.0656, 0.0656, 0.0656]",
+      "actual": "[0.0655964, 0.0655964, 0.0655964, 0.0655964]",
+      "tol": 0.0005,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "group": "4 Analysis",
+      "name": "renormalised vs classical-deletion MSE ratio (K=1,2,3)",
+      "source": "analysis",
+      "expected": "-",
+      "actual": "[1.04555, 0.983946, 1.00848]",
+      "tol": "-",
+      "status": "INFO",
+      "note": "ratio != 1: renormalisation changes the result; it is not always better or worse"
+    },
+    {
+      "group": "5 Monte Carlo",
+      "name": "uniform random images: median PSNR at K=2",
+      "source": "deck: Is the initial example typical",
+      "expected": "17.7",
+      "actual": "17.7596",
+      "tol": 0.3,
+      "status": "PASS",
+      "note": "statistical"
+    },
+    {
+      "group": "5 Monte Carlo",
+      "name": "smooth images: median PSNR at K=2 (about 34 dB)",
+      "source": "deck: Is the initial example typical",
+      "expected": "34",
+      "actual": "33.8399",
+      "tol": 0.7,
+      "status": "PASS",
+      "note": "statistical"
+    },
+    {
+      "group": "5 Monte Carlo",
+      "name": "high-contrast images: median PSNR at K=2 (about 21 dB)",
+      "source": "deck: Is the initial example typical",
+      "expected": "21",
+      "actual": "20.619",
+      "tol": 0.7,
+      "status": "PASS",
+      "note": "statistical"
+    },
+    {
+      "group": "5 Monte Carlo",
+      "name": "DC coefficient always holds at least 25% of the energy (non-negative pixels)",
+      "source": "deck: Is the initial example typical",
+      "expected": "True",
+      "actual": "True",
+      "tol": "-",
+      "status": "PASS",
+      "note": "smallest observed share 0.2656"
+    },
+    {
+      "group": "5 Monte Carlo",
+      "name": "left-right coefficient outranks the pair (about 41%)",
+      "source": "deck: Is the initial example typical",
+      "expected": "0.41",
+      "actual": "0.40975",
+      "tol": 0.02,
+      "status": "PASS",
+      "note": "statistical"
+    },
+    {
+      "group": "5 Monte Carlo",
+      "name": "median PSNR K=1,2,3 (uniform)",
+      "source": "analysis",
+      "expected": "-",
+      "actual": "[12.1138, 17.7596, 24.5462]",
+      "tol": "-",
+      "status": "INFO",
+      "note": ""
+    },
+    {
+      "group": "5 Monte Carlo",
+      "name": "median PSNR K=1,2,3 (smooth)",
+      "source": "analysis",
+      "expected": "-",
+      "actual": "[28.7916, 33.8399, 40.4023]",
+      "tol": "-",
+      "status": "INFO",
+      "note": ""
+    },
+    {
+      "group": "5 Monte Carlo",
+      "name": "median PSNR K=1,2,3 (high contrast)",
+      "source": "analysis",
+      "expected": "-",
+      "actual": "[15.2961, 20.619, 27.1588]",
+      "tol": "-",
+      "status": "INFO",
+      "note": ""
+    }
+  ],
+  "details": {
+    "test_images": {
+      "A Mixed values (initial example)": {
+        "shares": [
+          0.8333333333333333,
+          0.06666666666666662,
+          0.033333333333333326,
+          0.06666666666666674
+        ],
+        "1": {
+          "energy": 0.8333333333333333,
+          "mse": 3267.3401559271183,
+          "psnr": 12.988860105516252,
+          "x_hat": [
+            136.93063937629154,
+            136.93063937629154,
+            136.93063937629154,
+            136.93063937629154
+          ]
+        },
+        "2": {
+          "energy": 0.8999999999999999,
+          "mse": 1229.931878661288,
+          "psnr": 17.231993027137,
+          "x_hat": [
+            158.11388300841898,
+            105.40925533894598,
+            105.40925533894598,
+            158.11388300841898
+          ]
+        },
+        "3": {
+          "energy": 0.9666666666666667,
+          "mse": 630.2969906184359,
+          "psnr": 20.13535127296043,
+          "x_hat": [
+            177.99166970046278,
+            76.28214415734118,
+            76.28214415734115,
+            177.99166970046278
+          ]
+        }
+      },
+      "B Smooth": {
+        "shares": [
+          0.9973031283710896,
+          0.0002696871628910471,
+          0.0021574973031283757,
+          0.0002696871628910467
+        ],
+        "1": {
+          "energy": 0.9973031283710896,
+          "mse": 31.271097768190458,
+          "psnr": 33.17937233500921,
+          "x_hat": [
+            107.64525070805493,
+            107.64525070805493,
+            107.64525070805493,
+            107.64525070805493
+          ]
+        },
+        "2": {
+          "energy": 0.999460625674218,
+          "mse": 6.2508429997455766,
+          "psnr": 40.171417698519136,
+          "x_hat": [
+            102.5276541216417,
+            112.53035208472872,
+            102.5276541216417,
+            112.53035208472872
+          ]
+        },
+        "3": {
+          "energy": 0.999730312837109,
+          "mse": 1.5622892216462752,
+          "psnr": 46.193189243242855,
+          "x_hat": [
+            101.26365567475356,
+            111.2650043833712,
+            103.76399285190799,
+            113.76534156052563
+          ]
+        }
+      },
+      "C Gradient": {
+        "shares": [
+          0.6428571428571427,
+          0.14285714285714282,
+          0.07142857142857141,
+          0.1428571428571428
+        ],
+        "1": {
+          "energy": 0.6428571428571427,
+          "mse": 10024.78807083741,
+          "psnr": 8.12005160686787,
+          "x_hat": [
+            159.02043893789252,
+            159.02043893789252,
+            159.02043893789252,
+            159.02043893789252
+          ]
+        },
+        "2": {
+          "energy": 0.7857142857142855,
+          "mse": 3446.1903174943945,
+          "psnr": 12.757411029749125,
+          "x_hat": [
+            95.89293271902025,
+            95.89293271902027,
+            191.78586543804053,
+            191.7858654380405
+          ]
+        },
+        "3": {
+          "energy": 0.9285714285714283,
+          "mse": 1839.7105528242505,
+          "psnr": 15.483308613363677,
+          "x_hat": [
+            44.10433434133556,
+            44.10433434133549,
+            220.52167170667758,
+            220.52167170667764
+          ]
+        }
+      },
+      "D Checker": {
+        "shares": [
+          0.4999999999999999,
+          0.2499999999999999,
+          1.6872297554945895e-32,
+          0.2500000000000001
+        ],
+        "1": {
+          "energy": 0.4999999999999999,
+          "mse": 19045.38155334475,
+          "psnr": 5.332906831698536,
+          "x_hat": [
+            180.31222920256963,
+            180.31222920256963,
+            180.31222920256963,
+            180.31222920256963
+          ]
+        },
+        "2": {
+          "energy": 0.7499999999999998,
+          "mse": 3292.9481189168782,
+          "psnr": 12.954954725020729,
+          "x_hat": [
+            220.83647796503183,
+            73.61215932167728,
+            73.61215932167728,
+            220.83647796503183
+          ]
+        },
+        "3": {
+          "energy": 0.9999999999999999,
+          "mse": 1.767713212412811e-27,
+          "psnr": Infinity,
+          "x_hat": [
+            255.00000000000006,
+            -2.0018678848218133e-14,
+            -1.4413771583198444e-14,
+            255.00000000000006
+          ]
+        }
+      },
+      "E Single bright pixel": {
+        "shares": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "1": {
+          "energy": 0.25,
+          "mse": 16256.25,
+          "psnr": 6.020599913279624,
+          "x_hat": [
+            127.5,
+            127.5,
+            127.5,
+            127.5
+          ]
+        },
+        "2": {
+          "energy": 0.5,
+          "mse": 5458.6282766723725,
+          "psnr": 10.759968402726406,
+          "x_hat": [
+            180.3122292025696,
+            90.1561146012848,
+            0.0,
+            90.15611460128478
+          ]
+        },
+        "3": {
+          "energy": 0.75,
+          "mse": 1646.4740594584384,
+          "psnr": 15.965254681660543,
+          "x_hat": [
+            220.8364779650319,
+            0.0,
+            73.6121593216773,
+            -1.4155343563970746e-14
+          ]
+        }
+      },
+      "F Flat": {
+        "shares": [
+          1.0,
+          1.8746997283273213e-33,
+          3.749399456654644e-33,
+          1.6872297554945895e-32
+        ],
+        "1": {
+          "energy": 1.0,
+          "mse": 0.0,
+          "psnr": Infinity,
+          "x_hat": [
+            128.0,
+            128.0,
+            128.0,
+            128.0
+          ]
+        },
+        "2": {
+          "energy": 1.0,
+          "mse": 0.0,
+          "psnr": Infinity,
+          "x_hat": [
+            128.0,
+            128.0,
+            128.0,
+            128.0
+          ]
+        },
+        "3": {
+          "energy": 1.0,
+          "mse": 0.0,
+          "psnr": Infinity,
+          "x_hat": [
+            128.0,
+            128.0,
+            128.0,
+            128.0
+          ]
+        }
+      },
+      "G Horizontal edge": {
+        "shares": [
+          0.4999999999999999,
+          0.25,
+          1.8746997283273213e-33,
+          0.2499999999999999
+        ],
+        "1": {
+          "energy": 0.4999999999999999,
+          "mse": 19045.38155334475,
+          "psnr": 5.332906831698536,
+          "x_hat": [
+            180.31222920256963,
+            180.31222920256963,
+            180.31222920256963,
+            180.31222920256963
+          ]
+        },
+        "2": {
+          "energy": 0.7499999999999999,
+          "mse": 3292.9481189168773,
+          "psnr": 12.95495472502073,
+          "x_hat": [
+            220.83647796503183,
+            220.83647796503183,
+            73.6121593216773,
+            73.61215932167727
+          ]
+        },
+        "3": {
+          "energy": 0.9999999999999998,
+          "mse": 3.0998901380597065e-28,
+          "psnr": Infinity,
+          "x_hat": [
+            255.00000000000003,
+            255.0,
+            -5.604907265019687e-15,
+            2.0018678848218133e-14
+          ]
+        }
+      },
+      "H Vertical edge": {
+        "shares": [
+          0.4999999999999999,
+          1.8746997283273213e-33,
+          0.4999999999999999,
+          1.6872297554945895e-32
+        ],
+        "1": {
+          "energy": 0.4999999999999999,
+          "mse": 19045.38155334475,
+          "psnr": 5.332906831698536,
+          "x_hat": [
+            180.31222920256963,
+            180.31222920256963,
+            180.31222920256963,
+            180.31222920256963
+          ]
+        },
+        "2": {
+          "energy": 0.9999999999999998,
+          "mse": 4.0389678347315804e-28,
+          "psnr": Infinity,
+          "x_hat": [
+            255.00000000000003,
+            -1.912193722893869e-30,
+            255.00000000000003,
+            -5.736581168681606e-30
+          ]
+        },
+        "3": {
+          "energy": 0.9999999999999998,
+          "mse": 4.34372370931779e-28,
+          "psnr": Infinity,
+          "x_hat": [
+            255.00000000000003,
+            7.807123344564375e-15,
+            255.00000000000003,
+            -7.807123344564383e-15
+          ]
+        }
+      }
+    },
+    "k_sweep": {
+      "1": {
+        "selected": [
+          0
+        ],
+        "energy": 0.8333333333333333,
+        "x_hat": [
+          136.93063937629154,
+          136.93063937629154,
+          136.93063937629154,
+          136.93063937629154
+        ],
+        "mse": 3267.3401559271183,
+        "psnr": 12.988860105516252
+      },
+      "2": {
+        "selected": [
+          0,
+          1
+        ],
+        "energy": 0.8999999999999999,
+        "x_hat": [
+          158.11388300841898,
+          105.40925533894598,
+          105.40925533894598,
+          158.11388300841898
+        ],
+        "mse": 1229.931878661288,
+        "psnr": 17.231993027137
+      },
+      "3": {
+        "selected": [
+          0,
+          1,
+          3
+        ],
+        "energy": 0.9666666666666667,
+        "x_hat": [
+          177.99166970046278,
+          76.28214415734118,
+          76.28214415734115,
+          177.99166970046278
+        ],
+        "mse": 630.2969906184359,
+        "psnr": 20.13535127296043
+      },
+      "4": {
+        "selected": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "energy": 1.0,
+        "x_hat": [
+          200.00000000000003,
+          50.0,
+          99.99999999999999,
+          150.0
+        ],
+        "mse": 2.524354896707238e-28,
+        "psnr": Infinity
+      }
+    },
+    "mse_law": {
+      "images": 50000,
+      "comparisons": 200000,
+      "covered": 179531,
+      "by_kind": {
+        "symmetric": 150000,
+        "pair-split": 29531,
+        "uncovered": 20469
+      },
+      "max_error_vs_norm2": 2.2204460492503126e-16
+    },
+    "brightness": [
+      {
+        "factor": 1.0,
+        "mse": 1229.931878661288,
+        "psnr": 17.231993027137,
+        "relative_error": 0.06559636686193536
+      },
+      {
+        "factor": 0.5,
+        "mse": 307.482969665322,
+        "psnr": 23.252592940416626,
+        "relative_error": 0.06559636686193536
+      },
+      {
+        "factor": 0.25,
+        "mse": 76.8707424163305,
+        "psnr": 29.27319285369625,
+        "relative_error": 0.06559636686193536
+      },
+      {
+        "factor": 0.125,
+        "mse": 19.217685604082625,
+        "psnr": 35.293792766975876,
+        "relative_error": 0.06559636686193536
+      }
+    ],
+    "renorm": {
+      "1": {
+        "mse_renorm": 3267.3401559271183,
+        "mse_classical": 3125.0,
+        "psnr_renorm": 12.988860105516252,
+        "psnr_classical": 13.182303391878163,
+        "ratio": 1.0455488498966778
+      },
+      "2": {
+        "mse_renorm": 1229.931878661288,
+        "mse_classical": 1250.0,
+        "psnr_renorm": 17.231993027137,
+        "psnr_classical": 17.16170347859854,
+        "ratio": 0.9839455029290304
+      },
+      "3": {
+        "mse_renorm": 630.2969906184359,
+        "mse_classical": 625.0000000000002,
+        "psnr_renorm": 20.13535127296043,
+        "psnr_classical": 20.172003435238352,
+        "ratio": 1.008475184989497
+      }
+    },
+    "monte_carlo": {
+      "uniform": {
+        "1": {
+          "median_psnr": 12.113806240896475,
+          "p_ge_30": 0.0021,
+          "p_ge_20": 0.05085,
+          "mean_energy": 0.7856006120884437
+        },
+        "2": {
+          "median_psnr": 17.759562480926824,
+          "p_ge_30": 0.02935,
+          "p_ge_20": 0.3062,
+          "mean_energy": 0.9006145243595085
+        },
+        "3": {
+          "median_psnr": 24.546230374997812,
+          "p_ge_30": 0.24075,
+          "p_ge_20": 0.80465,
+          "mean_energy": 0.9720196965269643
+        }
+      },
+      "smooth": {
+        "1": {
+          "median_psnr": 28.791621004553043,
+          "p_ge_30": 0.38535,
+          "p_ge_20": 0.9995,
+          "mean_energy": 0.9875929011609933
+        },
+        "2": {
+          "median_psnr": 33.83990364131709,
+          "p_ge_30": 0.8365,
+          "p_ge_20": 1.0,
+          "mean_energy": 0.9941550082347623
+        },
+        "3": {
+          "median_psnr": 40.40234431023981,
+          "p_ge_30": 0.9883,
+          "p_ge_20": 1.0,
+          "mean_energy": 0.998281984606193
+        }
+      },
+      "contrast": {
+        "1": {
+          "median_psnr": 15.296085248814029,
+          "p_ge_30": 0.006901725431357839,
+          "p_ge_20": 0.1501375343835959,
+          "mean_energy": 0.8305725044398747
+        },
+        "2": {
+          "median_psnr": 20.618986549752147,
+          "p_ge_30": 0.056014003500875216,
+          "p_ge_20": 0.5616904226056514,
+          "mean_energy": 0.9195685673441886
+        },
+        "3": {
+          "median_psnr": 27.158844456019718,
+          "p_ge_30": 0.3452863215803951,
+          "p_ge_20": 0.9215303825956489,
+          "mean_energy": 0.9761526239154303
+        }
+      },
+      "facts": {
+        "dc_min": 0.26555442600845625,
+        "dc_mean": 0.7857224686409642,
+        "p_y2_outranks_pair": 0.40975
+      }
+    }
+  }
+}

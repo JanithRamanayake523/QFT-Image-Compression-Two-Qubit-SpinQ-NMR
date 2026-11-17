@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qftimg"
+version = "1.0.0"
+description = "Reproduction and verification code for two-qubit QFT image compression with a SpinQ NMR comparison"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = ["numpy>=1.24"]
+
+[project.optional-dependencies]
+qiskit = ["qiskit>=1.0", "qiskit-aer>=0.14"]
+figures = ["matplotlib>=3.7"]
+dev = ["pytest>=7.0", "qiskit>=1.0", "qiskit-aer>=0.14", "matplotlib>=3.7"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

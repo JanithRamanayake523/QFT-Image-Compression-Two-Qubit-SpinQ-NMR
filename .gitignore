@@ -1,0 +1,11 @@
+__pycache__/
+.pytest_cache/
+*.pyc
+.venv/
+*.egg-info/
+build/
+dist/
+# Office lock / temp files
+~$*
+*.tmp
+.DS_Store

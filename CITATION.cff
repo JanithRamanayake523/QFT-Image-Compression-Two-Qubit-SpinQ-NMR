@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the accompanying study."
+title: "Two-qubit QFT image compression: reproduction and verification code"
+type: software
+version: 1.0.0
+license: MIT
+authors:
+  - family-names: Marapperuma
+    given-names: M. J.
+    affiliation: "Research and Development Centre for Mathematical Modelling, Department of Mathematics, University of Colombo, Sri Lanka"
+  - family-names: Rashmika
+    given-names: H. R. J. R.
+    affiliation: "Research and Development Centre for Mathematical Modelling, Department of Mathematics, University of Colombo, Sri Lanka"
+  - family-names: Vindula
+    given-names: W. D. S.
+    affiliation: "Research and Development Centre for Mathematical Modelling, Department of Mathematics, University of Colombo, Sri Lanka"
+  - family-names: Chinthila
+    given-names: Osanda
+    affiliation: "Department of Mathematics, University of Colombo, Sri Lanka"
+preferred-citation:
+  type: article
+  title: "Quantum Fourier Transform for Image Compression: A Two-Qubit Simulation and SpinQ NMR Demonstration"
+  authors:
+    - family-names: Marapperuma
+      given-names: M. J.
+    - family-names: Rashmika
+      given-names: H. R. J. R.
+    - family-names: Vindula
+      given-names: W. D. S.
+    - family-names: Chinthila
+      given-names: Osanda
+  year: 2026
