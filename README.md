@@ -11,7 +11,7 @@ Research and Development Centre for Mathematical Modelling, Department of Mathem
 
 **Presented at the Colombo Quantum Computing Meetup (CQCM) 2026.**
 
-**Paper:** the full text will be available soon (link and DOI to be added here).
+**Paper:** available soon (link and DOI to be added here). **Slides:** [`publication/presentation`](publication/presentation).
 
 ## Abstract
 
@@ -150,6 +150,7 @@ The law is checked against simulation on random images and covers about 90 % of 
 ├── tests/             pytest suite
 ├── data/              SpinQ measurements (CSV) and data description
 ├── results/           reference verification report (report.md / report.json) and figures
+├── publication/       presentation slides (PPTX, PDF); the paper will be added when available
 ├── docs/
 │   └── REPRODUCIBILITY.md  environment, seeds, expected output
 └── .github/workflows/ continuous integration (tests plus the verification run)
@@ -186,5 +187,5 @@ reported data. See [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## License
 
-Code: MIT, see [`LICENSE`](LICENSE). The paper and presentation slides are not part of this repository and
-are copyright of the authors.
+Code: MIT, see [`LICENSE`](LICENSE). The presentation slides in [`publication/`](publication/) are copyright of the authors
+and are not covered by the code licence; the paper will be added when available.
