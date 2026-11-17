@@ -1,9 +1,22 @@
 cff-version: 1.2.0
-message: "If you use this code, please cite the accompanying study."
-title: "Two-qubit QFT image compression: reproduction and verification code"
+message: "If you use this code or its results, please cite the accompanying study."
+title: "QFT Image Compression: Two-Qubit Simulation and SpinQ NMR Demonstration (reproducibility code)"
+abstract: >-
+  Reproduction and verification code for a two-qubit Quantum Fourier Transform image-compression
+  demonstration on a 2 x 2 grayscale image, with a comparison against SpinQ NMR hardware measurements
+  and additional analysis over K, test images and random images.
 type: software
 version: 1.0.0
 license: MIT
+repository-code: "https://github.com/JanithRamanayake523/QFT-Image-Compression-Two-Qubit-SpinQ-NMR"
+keywords:
+  - quantum Fourier transform
+  - image compression
+  - amplitude encoding
+  - Qiskit
+  - SpinQ
+  - NMR quantum computing
+  - reproducible research
 authors:
   - family-names: Marapperuma
     given-names: M. J.
@@ -18,8 +31,10 @@ authors:
     given-names: Osanda
     affiliation: "Department of Mathematics, University of Colombo, Sri Lanka"
 preferred-citation:
-  type: article
+  type: conference-paper
   title: "Quantum Fourier Transform for Image Compression: A Two-Qubit Simulation and SpinQ NMR Demonstration"
+  collection-title: "Colombo Quantum Computing Meetup (CQCM) 2026"
+  year: 2026
   authors:
     - family-names: Marapperuma
       given-names: M. J.
@@ -29,4 +44,3 @@ preferred-citation:
       given-names: W. D. S.
     - family-names: Chinthila
       given-names: Osanda
-  year: 2026

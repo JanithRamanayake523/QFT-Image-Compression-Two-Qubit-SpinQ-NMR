@@ -9,7 +9,23 @@ description = "Reproduction and verification code for two-qubit QFT image compre
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
+authors = [
+  { name = "M. J. Marapperuma" },
+  { name = "H. R. J. R. Rashmika" },
+  { name = "W. D. S. Vindula" },
+  { name = "Osanda Chinthila" },
+]
+keywords = ["quantum Fourier transform", "image compression", "amplitude encoding", "qiskit", "spinq", "reproducible research"]
+classifiers = [
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Physics",
+]
 dependencies = ["numpy>=1.24"]
+
+[project.urls]
+Repository = "https://github.com/JanithRamanayake523/QFT-Image-Compression-Two-Qubit-SpinQ-NMR"
 
 [project.optional-dependencies]
 qiskit = ["qiskit>=1.0", "qiskit-aer>=0.14"]

@@ -1,19 +1,39 @@
-# qftimg: two-qubit QFT image compression, reproduced and verified
+# QFT Image Compression: Two-Qubit Simulation and SpinQ NMR Demonstration
 
-Reproduction and verification code for the study **"Quantum Fourier Transform for Image Compression:
-A Two-Qubit Simulation and SpinQ NMR Demonstration"** (Marapperuma, Rashmika, Vindula, Chinthila;
-Research and Development Centre for Mathematical Modelling, University of Colombo).
+[![verify](https://github.com/JanithRamanayake523/QFT-Image-Compression-Two-Qubit-SpinQ-NMR/actions/workflows/ci.yml/badge.svg)](https://github.com/JanithRamanayake523/QFT-Image-Compression-Two-Qubit-SpinQ-NMR/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-A 2 x 2 grayscale image is amplitude-encoded on two qubits, transformed with the Quantum Fourier Transform
-(QFT), compressed by keeping the K largest coefficients, renormalised, and reconstructed with the inverse
-QFT. This repository recomputes **every number reported in the study and in our presentation**, including
-our additional analysis, and compares each with the reported value. One command prints a PASS / FAIL
-table so that anyone can check the results independently.
+Research code and reproducibility package for the study **"Quantum Fourier Transform for Image Compression:
+A Two-Qubit Simulation and SpinQ NMR Demonstration"**.
 
-> **Scope.** A four-pixel, two-qubit toy model. It is a transparent baseline, **not** evidence of scalable or
-> practical image compression, and not a claim of quantum advantage. The coefficient-selection step uses
-> full statevector access, which a real device does not provide. The SpinQ hardware measurements are taken
-> from the study's table; this code cannot re-measure them.
+**Authors:** M. J. Marapperuma, H. R. J. R. Rashmika, W. D. S. Vindula, Osanda Chinthila.
+Research and Development Centre for Mathematical Modelling, Department of Mathematics, University of Colombo, Sri Lanka.
+
+**Presented at the Colombo Quantum Computing Meetup (CQCM) 2026.**
+
+## Abstract
+
+We give a compact end-to-end demonstration of Quantum Fourier Transform (QFT) based image compression on a
+2 x 2 grayscale image held in two qubits by amplitude encoding. The QFT is built from elementary gates
+(Hadamard, controlled phase, SWAP) and cross-checked against Qiskit and a classical FFT. Compression keeps the
+two largest-magnitude coefficients, renormalises, and reconstructs with the inverse QFT: 90 % of the spectral
+energy is retained with 50 % of the coefficients, giving MSE 1229.93 and PSNR 17.23 dB. Complementary
+experiments on a SpinQ two-qubit NMR processor compare theoretical and measured probabilities for four binary
+patterns (overall mean absolute difference 0.0575). We add an analysis over K, eight test images and random
+images, an exact closed-form error law, and a brightness effect on PSNR.
+
+## Highlights
+
+* Every number in the study and in the talk is recomputed and compared with the reported value
+  (`python scripts/run_all.py`, result: 70 PASS, 1 FLAG, 0 FAIL).
+* Transparent four-pixel baseline: all coefficients can be checked by hand.
+* Gate-level QFT verified against Qiskit, Qiskit's built-in QFT, a classical FFT and a 2048-shot Aer run.
+* Exact MSE law for top-K truncation with renormalisation, tested on 50,000 random images.
+* Honest scope: not evidence of scalable compression and not a claim of quantum advantage.
+
+> **Scope.** A four-pixel, two-qubit toy model. The coefficient-selection step uses full statevector access,
+> which a real device does not provide, and loading arbitrary images into amplitudes is not efficient in
+> general. The SpinQ measurements are taken from the study's table; this code cannot re-measure them.
 
 ## Pipeline
 
@@ -114,7 +134,7 @@ The law is checked against simulation on random images and covers about 90 % of 
 
 ```
 .
-├── README.md  LICENSE  CITATION.cff  pyproject.toml  requirements.txt
+├── README.md  LICENSE  CITATION.cff  CHANGELOG.md  CONTRIBUTING.md  pyproject.toml  requirements.txt
 ├── src/qftimg/
 │   ├── core.py        pipeline: encode, QFT, top-K, renormalise, inverse QFT, MSE / PSNR
 │   ├── circuits.py    NumPy gate-level QFT; optional Qiskit operator, built-in QFT and Aer shots
@@ -123,12 +143,15 @@ The law is checked against simulation on random images and covers about 90 % of 
 │   └── verify.py      all checks and the report writer
 ├── scripts/
 │   ├── run_all.py     command-line entry point (reproduce and verify everything)
-│   └── make_figures.py  optional matplotlib figures
+│   ├── make_figures.py  optional matplotlib figures
+│   └── export_data.py   regenerates data/spinq_measurements.csv
 ├── tests/             pytest suite
+├── data/              SpinQ measurements (CSV) and data description
 ├── results/           reference verification report (report.md / report.json) and figures
 ├── docs/
 │   ├── paper/         the study (PDF)
-│   └── presentation/  conference presentation (PPTX and PDF)
+│   ├── presentation/  conference presentation (PPTX and PDF)
+│   └── REPRODUCIBILITY.md  environment, seeds, expected output
 └── .github/workflows/ continuous integration (tests plus the verification run)
 ```
 
@@ -139,12 +162,29 @@ The law is checked against simulation on random images and covers about 90 % of 
 * The Monte Carlo statements are about random 2 x 2 images only.
 * One hardware run per pattern, no repeated runs, no confidence intervals.
 
+## Reproducibility
+
+Seeds, software versions and expected output are listed in [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md).
+The reference report from a full run is committed as [`results/report.md`](results/report.md). GitHub Actions
+re-runs the tests and a quick verification on every push.
+
 ## Citation
 
-Please cite the study; see [`CITATION.cff`](CITATION.cff) (GitHub shows a "Cite this repository" button).
-Add the journal reference and DOI there once the study is published.
+If you use this code or the results, please cite the study (see [`CITATION.cff`](CITATION.cff); GitHub shows a
+"Cite this repository" button):
+
+> M. J. Marapperuma, H. R. J. R. Rashmika, W. D. S. Vindula and O. Chinthila, "Quantum Fourier Transform for
+> Image Compression: A Two-Qubit Simulation and SpinQ NMR Demonstration," Colombo Quantum Computing Meetup
+> (CQCM) 2026.
+
+Add the proceedings or journal reference and DOI to `CITATION.cff` when available.
+
+## Contributing
+
+Issues and pull requests are welcome, in particular independent re-runs, other seeds, and corrections to the
+reported data. See [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## License
 
-MIT, see [`LICENSE`](LICENSE). Please confirm the copyright holder line in `LICENSE` with all co-authors
-(and your institution's policy) before publishing.
+Code: MIT, see [`LICENSE`](LICENSE). The documents in `docs/` (paper and presentation) are copyright of the
+authors and are not covered by the code licence unless stated otherwise.

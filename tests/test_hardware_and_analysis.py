@@ -60,3 +60,15 @@ def test_full_verification_has_no_failures():
     checks, _ = run_all(n_law=800, n_mc=1500, log=lambda *_: None)
     s = summarise(checks)
     assert s.get("FAIL", 0) == 0
+
+
+def test_csv_matches_code():
+    import csv
+    import os
+    path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "spinq_measurements.csv")
+    rows = list(csv.DictReader(open(path, encoding="utf8")))
+    assert len(rows) == 16
+    for r in rows:
+        k, i = int(r["example"]), H.STATES.index(r["state"])
+        assert abs(float(r["measured"]) - H.EXAMPLES[k]["A"][i]) < 1e-9
+        assert abs(float(r["theory_listed"]) - H.EXAMPLES[k]["T"][i]) < 1e-9
