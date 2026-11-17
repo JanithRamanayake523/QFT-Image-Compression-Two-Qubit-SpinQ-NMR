@@ -9,3 +9,6 @@ dist/
 ~$*
 *.tmp
 .DS_Store
+
+# Local only: unpublished paper and slides (no DOI yet). Not tracked, so pulls never touch it.
+publication/
