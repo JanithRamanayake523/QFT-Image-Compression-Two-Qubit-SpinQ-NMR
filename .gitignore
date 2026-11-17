@@ -10,5 +10,5 @@ dist/
 *.tmp
 .DS_Store
 
-# Local only: the paper (no DOI yet). Not tracked, so pulls never touch it. Slides are tracked.
-publication/paper/
+# Local only: everything private (the paper until it has a DOI, drafts, raw files). Never pushed.
+_local/
