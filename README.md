@@ -148,9 +148,8 @@ The law is checked against simulation on random images and covers about 90 % of 
 ├── tests/             pytest suite
 ├── data/              SpinQ measurements (CSV) and data description
 ├── results/           reference verification report (report.md / report.json) and figures
+├── publication/       the paper (PDF) and the presentation slides (PPTX, PDF), with their own README
 ├── docs/
-│   ├── paper/         the study (PDF)
-│   ├── presentation/  conference presentation (PPTX and PDF)
 │   └── REPRODUCIBILITY.md  environment, seeds, expected output
 └── .github/workflows/ continuous integration (tests plus the verification run)
 ```
@@ -161,6 +160,10 @@ The law is checked against simulation on random images and covers about 90 % of 
 * Loading an arbitrary image into amplitudes and reading the coefficients back are not efficient in general.
 * The Monte Carlo statements are about random 2 x 2 images only.
 * One hardware run per pattern, no repeated runs, no confidence intervals.
+
+## Publication
+
+The paper and the presentation slides are in [`publication/`](publication/), see its [README](publication/README.md).
 
 ## Reproducibility
 
@@ -186,5 +189,5 @@ reported data. See [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## License
 
-Code: MIT, see [`LICENSE`](LICENSE). The documents in `docs/` (paper and presentation) are copyright of the
+Code: MIT, see [`LICENSE`](LICENSE). The documents in [`publication/`](publication/) (paper and slides) are copyright of the
 authors and are not covered by the code licence unless stated otherwise.
